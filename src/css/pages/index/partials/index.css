@@ -1,0 +1,55 @@
+.grid-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+}
+
+.grid-container > .operand-area {
+    grid-column: 1 / 5;
+    background: var(--color-dark-1);
+    display: grid;
+    justify-content: end;
+    align-content: end;
+    gap: 0.6rem;
+    padding-right: 0.4rem;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.grid-container > .operand-area > p {
+    font-family: var(--bold);
+    color: var(--color-white);
+    font-size: 1.8rem;
+}
+
+.grid-container > .operand-area > .previous-operand {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.2rem;
+    justify-self: end;
+}
+
+.grid-container > button {
+    background: var(--color-dark-2);
+    color: var(--color-white);
+    font-family: var(--medium);
+    font-size: 1.6rem;
+    cursor: pointer;
+    border: 1px solid var(--color-dark-2);
+}
+
+.grid-container > button:hover {
+    background: var(--color-white);
+    color: var(--color-blue);
+}
+
+.grid-container > .span-two {
+    grid-column: span 2;
+}
+
+.grid-container > .operator {
+    background: var(--color-blue);
+}
