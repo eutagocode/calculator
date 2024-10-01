@@ -1,0 +1,14 @@
+:root {
+    --color-blue: #2563eb;
+    --color-white: #eeeeee;
+    --color-dark-1: #111111;
+    --color-dark-2: #222222;
+    --gradient-1: linear-gradient(
+        90deg,
+        rgba(3, 105, 161, 1) 0%,
+        rgba(7, 89, 133, 1) 100%
+    );
+
+    --bold: "Poppins-Bold";
+    --medium: "Poppins-Medium";
+}
