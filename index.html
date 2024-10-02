@@ -9,46 +9,47 @@
     <body>
         <div class="grid-container">
             <div class="operand-area">
-                <p class="previous-operand">123+</p>
-                <p class="current-operand">456</p>
+                <p data-previous class="previous-operand"></p>
+                <p data-current class="current-operand"></p>
             </div>
-            <button class="span-two">AC</button>
-            <button>
+            <button data-all-clean class="span-two">AC</button>
+            <button data-delete>
                 <img
                     src="./src/assets/images/delete.svg"
                     alt="ícone de deletar"
                 />
             </button>
-            <button class="operator">
+            <button data-operand class="operator">
                 <img
                     src="./src/assets/images/divide.svg"
                     alt="ícone de divisão"
                 />
             </button>
-            <button>9</button>
-            <button>8</button>
-            <button>7</button>
-            <button class="operator">
+            <button data-number>9</button>
+            <button data-number>8</button>
+            <button data-number>7</button>
+            <button data-operand class="operator">
                 <img
                     src="./src/assets/images/x.svg"
                     alt="ícone de multiplicação"
                 />
             </button>
-            <button>6</button>
-            <button>5</button>
-            <button>4</button>
-            <button class="operator">
+            <button data-number>6</button>
+            <button data-number>5</button>
+            <button data-number>4</button>
+            <button data-operand class="operator">
                 <img src="./src/assets/images/plus.svg" alt="ícone de soma" />
             </button>
-            <button>3</button>
-            <button>2</button>
-            <button>1</button>
-            <button class="operator">
+            <button data-number>3</button>
+            <button data-number>2</button>
+            <button data-number>1</button>
+            <button data-operand class="operator">
                 <img src="./src/assets/images/minus.svg" alt="ícone de menos" />
             </button>
-            <button class="span-two">.</button>
-            <button>0</button>
-            <button class="operator">=</button>
+            <button data-number class="span-two">.</button>
+            <button data-number>0</button>
+            <button data-equals class="operator">=</button>
         </div>
+        <script src="./src/js/app.js"></script>
     </body>
 </html>
