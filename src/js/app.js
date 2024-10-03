@@ -13,15 +13,56 @@ class Calculator {
         this.clear();
     }
 
-    clear() {
-        this.previousOperand = "";
-        this.currentOperand = "";
-        this.operator = undefined;
+    calculate(operation) {
+        let result;
+
+        const _previousOperand = parseFloat(this.previousOperand);
+        const _currentOperand = parseFloat(this.currentOperand);
+
+        switch (operation) {
+            case "÷":
+                {
+                    this.currentOperand =
+                        parseFloat(_previousOperand) /
+                        parseFloat(_currentOperand);
+                }
+                break;
+            case "x":
+                {
+                    this.currentOperand =
+                        parseFloat(_previousOperand) *
+                        parseFloat(_currentOperand);
+                }
+                break;
+            case "+":
+                {
+                    this.currentOperand =
+                        parseFloat(_previousOperand) +
+                        parseFloat(_currentOperand);
+                }
+                break;
+            case "-":
+                {
+                    this.currentOperand =
+                        parseFloat(_previousOperand) -
+                        parseFloat(_currentOperand);
+                }
+                break;
+
+            default:
+                console.log("Ops, algo deu errado");
+        }
     }
 
-    updateDisplay() {
-        this.previousOperandTextElement.innerHTML = this.previousOperand;
-        this.currentOperandTextElement.innerHTML = this.currentOperand;
+    chooseOperation(operation) {
+        if (this.previousOperand !== "") {
+            this.calculate(this.operation);
+        }
+
+        this.operation = operation;
+
+        this.previousOperand = `${this.currentOperand} ${this.operation}`;
+        this.currentOperand = "";
     }
 
     appendNumber(number) {
@@ -29,12 +70,30 @@ class Calculator {
 
         this.currentOperand += number.toString();
     }
+
+    clear() {
+        this.previousOperand = "";
+        this.currentOperand = "";
+        this.operation = undefined;
+    }
+
+    updateDisplay() {
+        this.previousOperandTextElement.innerHTML = `${this.previousOperand} ${this.operation}`;
+        this.currentOperandTextElement.innerHTML = this.currentOperand;
+    }
 }
 
 const calculator = new Calculator(
     previousOperandElement,
     currentOperandElement,
 );
+
+for (const operatorButton of operatorButtons) {
+    operatorButton.addEventListener("click", () => {
+        calculator.chooseOperation(operatorButton.innerHTML);
+        calculator.updateDisplay();
+    });
+}
 
 for (const numberButton of numberButtons) {
     numberButton.addEventListener("click", () => {
